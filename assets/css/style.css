@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 45px;
+    margin: 15px;
+    padding-bottom: 15px;
+}
+
+header > h3 {
+    display: inline;
+    justify-content: center;
+}
+
+header > h4 {
+    display: block;
+    justify-content: end;
+}
+
+main {
+    width: 100%;
+    margin-left: 100px;
+}
+
+.start-screen > h2{
+    font-size: 50px;
+    text-align: center;
+}
+
+.start-screen > p {
+    text-align: center;
+}
+
+
+main > p {
+    text-align: center;
+}
+
+.startBtn {
+    text-align: center;
+}
+
+/* .hide {
+    display: none;
+} */
