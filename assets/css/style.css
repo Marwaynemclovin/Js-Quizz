@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --main-font: 'satoshi', sans-serif;
     --main-font-size: 42px;
     --main-bg-color: rgba(7,9,34,255);
@@ -6,7 +6,7 @@
     --container-font-color: #fff;
     --font-size-btn: 32px;
     --button-bg-color:#566df8;
-}
+} */
 
 .custom-border {
     border-style: solid;
