@@ -5,35 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>JavaScript Quiz</title>
-    <link rel="stylesheet" href="assets/css/reset.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    
     <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 
 <body>
-    <main>            
-        <div class="timer">
-            <h4>Timer: 0</h4>
+    <div class="px-2 py-3 my-3 text-center custom-border">
+        <nav class="position-relative px-5 text-end">
+            <h5>Timer: <span>0</span></h5>
+          </nav>
+        <h1 class="display-5 fw-bold">JavaScript Quiz</h1>
+        <div class="col-lg-6 mx-auto"></div>
+        <p class="lead mb-4">
+            Try and Answer All the Questions in the Given Time Limit! <br> Correct Answers Will Add Time and Points! <br> Incorrect Answers Will Subtract Time <br> GLHF!
+        </p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button type="button" class="btn start-game btn-primary btn-lg px-4 gap-3">Start Game</button>
+            <button type="button" class="btn view-highscores btn-outline-secondary btn-lg px-4">View HighScores</button>
         </div>
-        <div class="start-screen">
-            <h2>JavaScript Quiz</h2>
-            <p>Try and Answer All the Questions in the Given Time Limit! <br> Correct Answers Will Add Time and Points! <br> Incorrect Answers Will Subtract Time <br> GLHF!</p>
-        <div class="startBtn"> 
-            <button>Start</button>
-            <button>View HighScores</button>
-        </div>
-        </div>
-        <div id="questions-container" class="hide">
-            <div class="question">Question</div>
-            <div id="choices">
-                <button>Choice One</button>
-                <button>Choice Two</button>
-                <button>Choice Three</button>
-                <button>Choice Four</button>
-            </div>
-        </div>
-    </main>
-
-<script> src="assets/js/script.js"</script>
+    </div>
+<script type="text/javascript" src="assets/js/script.js">  </script>
 </body>
 
 </html>

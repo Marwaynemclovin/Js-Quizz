@@ -1,50 +1,16 @@
-*{
-    padding: 0;
-    margin: 0;
+:root {
+    --main-font: 'satoshi', sans-serif;
+    --main-font-size: 42px;
+    --main-bg-color: rgba(7,9,34,255);
+    --container-bg-color:rgba(52,24,78,255);
+    --container-font-color: #fff;
+    --font-size-btn: 32px;
+    --button-bg-color:#566df8;
 }
 
-.highscores {
-    display: inline;
-}
-
-.timer {    
-    display: inline;
-}
-
-body {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-  }  
-
-main {
-    width: 800px;
-    max-width: 80%;
-    border-radius: 5px;
-    padding: 10px;
+.custom-border {
+    border-style: solid;
+    margin: auto;
+    width: 75%;
     box-shadow: 0 0 10px 2px;
-  }
-
-.start-screen > h2{
-    font-size: 50px;
-    text-align: center;
 }
-
-.start-screen > p {
-    text-align: center;
-}
-
-
-main > p {
-    text-align: center;
-}
-
-.startBtn {
-    text-align: center;
-}
-
-/* .hide {
-    display: none;
-} */

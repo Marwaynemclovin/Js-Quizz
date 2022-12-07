@@ -1,3 +1,10 @@
+var startHide = document.querySelector('#start-screen')
+var startBtn = document.querySelector('#startBtn');
+var highScoresBtn = document.querySelector('#highscores');
+var choiceOne = document.querySelector('#choiceOne');
+var choiceTwo = document.querySelector('#choiceTwo');
+var choiceThree = document.querySelector('#choiceThree');
+var choiceFour = document.querySelector('#choiceFour');
 var questions = [
     {
         question: "Singe line comments start with:",
@@ -80,3 +87,20 @@ var questions = [
         answer: 4
     }
 ]
+
+function getRandomQuestion(questions) {
+ questions[Math.floor(Math.random()*questions.length)];
+}
+
+function startGame () {
+    
+    // startHide.classList.add('hide')
+    // return;
+}
+
+
+
+startBtn.addEventListener('click', startGame); 
+
+setInterval(timer, 1000);
+
