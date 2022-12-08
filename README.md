@@ -1,4 +1,4 @@
-# Js-Quizz
+# JavaScript-Quizz
 ## Link to Deployed Application
 Deployed @ https://marwaynemclovin.github.io/Js-Quizz/
 
