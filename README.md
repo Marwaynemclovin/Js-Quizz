@@ -13,7 +13,13 @@ This is just a simple JavaScript quiz, that allowed me to store foundational inf
 [License](#License)
 
 ## Screenshots of Application
+[index.html]
+![Screen Shot 2022-12-08 at 8 54 05 pm](https://user-images.githubusercontent.com/112296194/206422929-f5fa3141-4bd8-477a-8779-a8d8f8ffe660.png)
 
+[game.html]
+![Screen Shot 2022-12-08 at 8 54 11 pm](https://user-images.githubusercontent.com/112296194/206422971-5ed165d8-f823-4c09-b04b-5bf5092bc07f.png)
+
+[highscores.html]
 
 ## Local Installation
 Feel free to download or clone via your favourite code editor!
