@@ -1,4 +1,5 @@
 var questionTitle = document.querySelector('#question');
+var questionContainer = document.querySelector('.questionContainer')
 var choiceOne = document.querySelector('.choiceOne');
 var choiceTwo = document.querySelector('.choiceTwo');
 var choiceThree = document.querySelector('.choiceThree');
@@ -12,6 +13,7 @@ var timer;
 
 var scoreElement = document.querySelector('#score');
 var score = 0;
+var scoreContainer = document.querySelector('.scoreContainer')
 
 var questions = [
     {
@@ -66,10 +68,13 @@ var questions = [
     }
 ]
 
+window.onload = function (){
+    scoreContainer.style.display = "none"; 
+}
+
 // Starting the Game
 function startGame(){
     renderQuestion();
-    // renderChoices();
     startTimer();
 }
 
@@ -90,9 +95,10 @@ function renderQuestion(){
 
 
 function handleChoiceSelection(event){
-        currentQuestionIndex ++
-        renderQuestion();
-        checkAnswer();
+    checkAnswer(event.target);
+
+    currentQuestionIndex ++
+    renderQuestion();
 }
 
 // Timer Functions
@@ -101,6 +107,11 @@ function startTimer() {
     interval = setInterval(function () {
         timePassed++;
         timerElement.textContent = timeLeft - timePassed;
+
+    if (timeLeft === 0){
+        clearInterval(timer);
+        finishGame();
+    }
     }, 1000);
 }
 
@@ -110,16 +121,40 @@ function timerStop(){
 
 // Checking Answer, adding points if correct, subtracting if incorrect.
 function checkAnswer(answer) {
-    if (questions[currentQuestionIndex].answer == questions[currentQuestionIndex].responses[answer]) {
-        score++;
-        scoreElement.textContent = score;
+    if (questions[currentQuestionIndex].answer == answer.textContent) {
         score += 5;
+        scoreElement.textContent = score;
     }
     else {
         timePassed += 5;
     }
+
+    if (questions.length > currentQuestionIndex + 1) {
+        renderQuestion();
+    } else {
+        clearInterval(timer);
+        finishGame();
+    }
+};
+
+// Game Completetion
+function finishGame (){
+    hideElement(questionContainer);
+    displayElement(scoreContainer);
 }
 
 
+function renderHighScore (){
+    scoreElement.innerHTML = "";
+
+}
+
+function hideElement (){
+    Element.style.display = "none";
+}
+
+function displayElement (){
+    Element.style.display = "show";
+}
 
 startGame();
