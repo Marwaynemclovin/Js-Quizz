@@ -1,18 +1,22 @@
-
-// var highScoresBtn = document.querySelector('#highscores');
 var questionTitle = document.querySelector('#question');
-var timerElement = document.querySelector('#timer');
-var scoreElement = document.querySelector('#score');
-var choicesElement = document.querySelector('#choices');
+var choiceOne = document.querySelector('.choiceOne');
+var choiceTwo = document.querySelector('.choiceTwo');
+var choiceThree = document.querySelector('.choiceThree');
+var choiceFour = document.querySelector('.choiceFour');
 var currentQuestionIndex = 0;
+
+var timerElement = document.querySelector('#timer');
 var timeLeft = 60;
 var timePassed = 0;
 var timer;
 
+var scoreElement = document.querySelector('#score');
+var score = 0;
+
 var questions = [
     {
         question: "Singe line comments start with:",
-        responses: ["<>", "//","\\", "<!-->"],
+        responses: ["<>", "//","\\\\", "<!-->"],
         answer: "//"
     },
     {
@@ -65,6 +69,7 @@ var questions = [
 // Starting the Game
 function startGame(){
     renderQuestion();
+    // renderChoices();
     startTimer();
 }
 
@@ -72,11 +77,22 @@ function startGame(){
 function renderQuestion(){
     var currentQuestion = questions[currentQuestionIndex];
     questionTitle.textContent = currentQuestion.question;
+    choiceOne.textContent = questions[currentQuestionIndex].responses[0];
+    choiceTwo.textContent = questions[currentQuestionIndex].responses[1];
+    choiceThree.textContent = questions[currentQuestionIndex].responses[2];
+    choiceFour.textContent = questions[currentQuestionIndex].responses[3];
+
+    choiceOne.addEventListener('click', handleChoiceSelection);
+    choiceTwo.addEventListener('click', handleChoiceSelection);
+    choiceThree.addEventListener('click', handleChoiceSelection);
+    choiceFour.addEventListener('click', handleChoiceSelection);
 }
+
 
 function handleChoiceSelection(event){
         currentQuestionIndex ++
         renderQuestion();
+        checkAnswer();
 }
 
 // Timer Functions
@@ -92,11 +108,18 @@ function timerStop(){
     clearInterval(interval);
 }
 
-function checkChoice(event){
-    var userChoice = event.target.textContent
-    if (userChoice = answer){
-        console.log('right')
+// Checking Answer, adding points if correct, subtracting if incorrect.
+function checkAnswer(answer) {
+    if (questions[currentQuestionIndex].answer == questions[currentQuestionIndex].responses[answer]) {
+        score++;
+        scoreElement.textContent = score;
+        score += 5;
+    }
+    else {
+        timePassed += 5;
     }
 }
+
+
 
 startGame();
