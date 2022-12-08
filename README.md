@@ -3,7 +3,7 @@
 Deployed @ https://marwaynemclovin.github.io/Js-Quizz/
 
 ## Description
-
+This is just a simple JavaScript quiz, that allowed me to store foundational information to refresh my memory for JavaScript. Furthermore, it also allowed me to practice more advanced techniques such as the use of text content. Within the application, questions must be answered within the given time limit, and scores are given to each correct answer. Furthermore, if an answer is incorrect, then time will be deducted! Finally, have access to a highscore screen which will be tracked. Feel free to have a go!
 
 ## Table of Contents
 [Screenshots of Application](#Screenshots-of-Application) <br>
@@ -32,7 +32,7 @@ Feel free to download or clone via your favourite code editor!
 ```
 ## Credits and Resources
 
-
+## License
 Copyright (c) [2022] [Marwin Manlangit]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
