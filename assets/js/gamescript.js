@@ -1,5 +1,4 @@
 var questionTitle = document.querySelector('#question');
-var questionContainer = document.querySelector('.questionContainer')
 var choiceOne = document.querySelector('.choiceOne');
 var choiceTwo = document.querySelector('.choiceTwo');
 var choiceThree = document.querySelector('.choiceThree');
@@ -14,6 +13,7 @@ var timer;
 var scoreElement = document.querySelector('#score');
 var score = 0;
 var scoreContainer = document.querySelector('.scoreContainer')
+var submitElement = document.querySelector("#submit");
 
 var questions = [
     {
@@ -69,7 +69,8 @@ var questions = [
 ]
 
 window.onload = function (){
-    scoreContainer.style.display = "none"; 
+    scoreContainer.style.display = "none";
+    submitElement.addEventListener('click', saveScores); 
 }
 
 // Starting the Game
@@ -107,11 +108,10 @@ function startTimer() {
     interval = setInterval(function () {
         timePassed++;
         timerElement.textContent = timeLeft - timePassed;
-
-    if (timeLeft === 0){
-        clearInterval(timer);
-        finishGame();
-    }
+        if (timeLeft - timePassed <= 0){
+            timerStop();
+            finishGame();
+        }
     }, 1000);
 }
 
@@ -121,6 +121,10 @@ function timerStop(){
 
 // Checking Answer, adding points if correct, subtracting if incorrect.
 function checkAnswer(answer) {
+    if (currentQuestionIndex == 9){
+        finishGame();
+        return;
+    }    
     if (questions[currentQuestionIndex].answer == answer.textContent) {
         score += 5;
         scoreElement.textContent = score;
@@ -129,32 +133,42 @@ function checkAnswer(answer) {
         timePassed += 5;
     }
 
-    if (questions.length > currentQuestionIndex + 1) {
-        renderQuestion();
-    } else {
-        clearInterval(timer);
+    if (timeLeft <= 0){
+        timerStop();
         finishGame();
     }
 };
 
 // Game Completetion
 function finishGame (){
-    hideElement(questionContainer);
+    timerStop();
+    hideElement(questionTitle);
+    hideElement(choiceOne);
+    hideElement(choiceTwo);
+    hideElement(choiceThree);
+    hideElement(choiceFour);
     displayElement(scoreContainer);
+    saveScores();
 }
 
 
-function renderHighScore (){
-    scoreElement.innerHTML = "";
-
+function saveScores() {
+    var fullNameInput = document.querySelector('.fullName')
+    fullNameInput
+        var player = {
+            fullName: fullNameInput.value,
+            score: score
+        };
+    localStorage.setItem('player', JSON.stringify(player));
 }
 
-function hideElement (){
-    Element.style.display = "none";
+function hideElement (hide){
+    hide.style.display = "none";
 }
 
-function displayElement (){
-    Element.style.display = "show";
+function displayElement (show){
+    show.style.display = "block";
 }
+
 
 startGame();
