@@ -1,106 +1,109 @@
-var startHide = document.querySelector('#start-screen')
-var startBtn = document.querySelector('#startBtn');
-var highScoresBtn = document.querySelector('#highscores');
-var choiceOne = document.querySelector('#choiceOne');
-var choiceTwo = document.querySelector('#choiceTwo');
-var choiceThree = document.querySelector('#choiceThree');
-var choiceFour = document.querySelector('#choiceFour');
+
+// var highScoresBtn = document.querySelector('#highscores');
+var questionTitle = document.querySelector('#question');
+var timerElement = document.querySelector('#timer');
+var scoreElement = document.querySelector('#score');
+var currentQuestionIndex = 0;
+var timeLeft = 60;
+var timePassed = 0;
+var timer;
+
 var questions = [
     {
         question: "Singe line comments start with:",
-        choiceOne: "<>",
-        choiceTwo: "//",
-        choiceThree: "\\",
-        choiceFour: "<!-->",
-        answer: 2
+        responses: ["<>", "//","\\", "<!-->"],
+        answer: "//"
     },
     {
         question: "What is used to declare a JavaScript Value?",
-        choiceOne: "var",
-        choiceTwo: "variable",
-        choiceThree: "iable",
-        choiceFour: "function",
-        answer: 1
+        responses: ["var", "variable", "iable", "function"],
+        answer: "var"
     },
     {
-    question: "If a variable is decleared with no value, what happens?",
-        choiceOne: "Nothing will happen",
-        choiceTwo: "0 will pop up",
-        choiceThree: "Variable will have an undefined value",
-        choiceFour: "A change within HTML will occur",
-        answer: 3
+        question: "If a variable is decleared with no value, what happens?",
+        responses: ["Nothing will happen", "0 will pop up", "Variable will have an undefined value", "A change within HTML will occur"],
+        answer: "Variable will have an undefined value"
     },
     {
         question: "What does + mean in JavaScript?",
-        choiceOne: "Multiplication",
-        choiceTwo: "Increment",
-        choiceThree: "Subtraction",
-        choiceFour: "Addition",
-        answer: 4
+        responses: ["Multiplication", "Increment", "Subtraction", "Addition"], 
+        answer: "Addition"
     },
     {
         question: "What does ++ mean in JavaScript?",
-        choiceOne: "Decrement",
-        choiceTwo: "Increment",
-        choiceThree: "Subtraction",
-        choiceFour: "Addition",
-        answer: 2
+        responses: ["Decrement", "Increment", "Subtraction", "Addition"],
+        answer: "Increment",
     },
     {
         question: "What does * mean in JavaScript?",
-        choiceOne: "Multiplication",
-        choiceTwo: "Increment",
-        choiceThree: "Subtraction",
-        choiceFour: "Division",
-        answer: 1
+        responses: ["Multiplication", "Increment", "Subtraction", "Division"],
+        answer: "Increment"
     },
     {
         question: "What does + mean in JavaScript?",
-        choiceOne: "Multiplication",
-        choiceTwo: "Increment",
-        choiceThree: "Subtraction",
-        choiceFour: "Addition",
-        answer: 4
+        responses: ["Multiplication", "Increment", "Subtraction", "Addition"],
+        answer: "Addition"
     },
     {
         question: "How do we find out the length of an array?",
-        choiceOne: ".length",
-        choiceTwo: ".width",
-        choiceThree: "length.size",
-        choiceFour: "size.array",
-        answer: 1
+        responses: [".length",  ".width", "length.size", "size.array"], 
+        answer: "length" 
     },
     {
         question: "Where does <script> go?",
-        choiceOne: "Within README",
-        choiceTwo: "Anywhere in CSS",
-        choiceThree: "Body of HTML",
-        choiceFour: "Inside script.js",
-        answer: 3
+        responses: ["Within README", "Anywhere in CSS", "Body of HTML", "Inside script.js"],
+        answer: "Body of HTML",
     },
     {
         question: "What operators do we use to store within arrays?",
-        choiceOne: "!!",
-        choiceTwo: "//",
-        choiceThree: "{}",
-        choiceFour: "[]",
-        answer: 4
+        responses: ["!!", "//", "{}", "[]"],
+        answer: "[]",
     }
 ]
 
-function getRandomQuestion(questions) {
- questions[Math.floor(Math.random()*questions.length)];
+// Starting the Game
+function startGame(){
+    renderQuestion();
+    renderChoices();
+    startTimer();
 }
 
-function startGame () {
-    
-    // startHide.classList.add('hide')
-    // return;
+// Rendering Question on Screen
+function renderQuestion(){
+    var currentQuestion = questions[currentQuestionIndex];
+    questionTitle.textContent = currentQuestion.question;
+    // var choices = document.querySelector('#choices');
+    // for (questions i)
 }
 
+function renderChoices(){
+    var testing = document.querySelector('#test')
+    testing.textContent = "test"
+}
 
+function handleChoiceSelection(event){
+        currentQuestionIndex ++
+        renderQuestion();
+}
 
-startBtn.addEventListener('click', startGame); 
+// Timer Functions
+function startTimer() {
+    timerElement.textContent = timeLeft;
+    interval = setInterval(function () {
+        timePassed++;
+        timerElement.textContent = timeLeft - timePassed;
+    }, 1000);
+}
 
-setInterval(timer, 1000);
+function timerStop(){
+    clearInterval(interval);
+}
 
+function checkChoice(event){
+    var userChoice = event.target.textContent
+    if (userChoice = answer){
+        console.log('right')
+    }
+}
+
+startGame();

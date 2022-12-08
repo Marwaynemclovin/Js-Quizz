@@ -11,16 +11,21 @@
 </head>
 <body>
     <div class="px-2 py-3 my-3 text-center custom-border">
-        <nav class="position-relative px-5 text-end">
-            <h5>Score <span>0</span></h5>
-            <h5>Timer: <span>0</span></h5>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <h4>Score: <span id="score">0</span></h4>
+                <h4>Timer: <span id="timer">0</span></h4>
+            </div>
           </nav>
         <h3 class="display-5 mb-3 fw-bold" id="question">JavaScript Quiz</h3>
-        <div class="d-flex flex-column col-lg-6 mx-auto">
-            <button type="button" class="btn text-light bg-dark btn-lg btn-block mb-3">Choice 1</button>
+        <div id="choices" class="d-flex flex-column col-lg-6 mx-auto">
+            <button id="test" type="button" class="btn text-light bg-dark btn-lg btn-block mb-3">Choice 1</button>
             <button type="button" class="btn text-light bg-dark btn-lg btn-block mb-3">Choice 2</button>
             <button type="button" class="btn text-light bg-dark btn-lg btn-block mb-3">Choice 3</button>
             <button type="button" class="btn text-light bg-dark btn-lg btn-block mb-3">Choice 4</button>
+        </div>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">    
+            <a href="index.html" class="btn start-game btn-primary btn-lg px-4 gap-3">Home</a>
         </div>    
     </div>
 <script type="text/javascript" src="assets/js/script.js"></script>
