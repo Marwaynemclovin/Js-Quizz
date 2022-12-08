@@ -1,6 +1,6 @@
 # Js-Quizz
 ## Link to Deployed Application
-Deployed @ https://marwaynemclovin.github.io/Javascript-Password-Gen/
+Deployed @ https://marwaynemclovin.github.io/Js-Quizz/
 
 ## Description
 
@@ -21,10 +21,14 @@ Feel free to download or clone via your favourite code editor!
 ## File Structure
 ```
 ├── assets
-|  └── style.css
+|  └── css
+|    └── style.css
+|  └── js
+|    └── javascript
 |__ README.md
-├── index.html
-└── script.js
+├── game.html
+├── highscores.html
+└── index.html
 ```
 ## Credits and Resources
 
