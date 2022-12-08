@@ -36,7 +36,6 @@ Feel free to download or clone via your favourite code editor!
 ├── highscores.html
 └── index.html
 ```
-## Credits and Resources
 
 ## License
 Copyright (c) [2022] [Marwin Manlangit]
