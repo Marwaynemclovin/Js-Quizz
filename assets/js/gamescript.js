@@ -3,6 +3,7 @@
 var questionTitle = document.querySelector('#question');
 var timerElement = document.querySelector('#timer');
 var scoreElement = document.querySelector('#score');
+var choicesElement = document.querySelector('#choices');
 var currentQuestionIndex = 0;
 var timeLeft = 60;
 var timePassed = 0;
@@ -57,14 +58,13 @@ var questions = [
     {
         question: "What operators do we use to store within arrays?",
         responses: ["!!", "//", "{}", "[]"],
-        answer: "[]",
+        answer: "[]"
     }
 ]
 
 // Starting the Game
 function startGame(){
     renderQuestion();
-    renderChoices();
     startTimer();
 }
 
@@ -72,13 +72,6 @@ function startGame(){
 function renderQuestion(){
     var currentQuestion = questions[currentQuestionIndex];
     questionTitle.textContent = currentQuestion.question;
-    // var choices = document.querySelector('#choices');
-    // for (questions i)
-}
-
-function renderChoices(){
-    var testing = document.querySelector('#test')
-    testing.textContent = "test"
 }
 
 function handleChoiceSelection(event){
