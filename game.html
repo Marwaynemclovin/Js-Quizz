@@ -10,24 +10,30 @@
 
 </head>
 <body>
+    <!-- Start of Game Container -->
     <div class="px-2 py-3 my-3 text-center custom-border">
+        <!-- Nav creation both score and timer -->
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
                 <h4>Score: <span id="score">0</span></h4>
                 <h4>Timer: <span id="timer">0</span></h4>
             </div>
           </nav>
+          <!-- Main Quizz Content -->
+          <!-- Question which changes with each question -->
         <h3 class="display-5 mb-3 fw-bold" id="question">JavaScript Quiz</h3>
+        <!-- Options for questions -->
         <div id="choices" class="d-flex flex-column col-lg-6 mx-auto">
-            <button id="test" type="button" class="btn text-light bg-dark btn-lg btn-block mb-3">Choice 1</button>
+            <button type="button" class="btn text-light bg-dark btn-lg btn-block mb-3">Choice 1</button>
             <button type="button" class="btn text-light bg-dark btn-lg btn-block mb-3">Choice 2</button>
             <button type="button" class="btn text-light bg-dark btn-lg btn-block mb-3">Choice 3</button>
             <button type="button" class="btn text-light bg-dark btn-lg btn-block mb-3">Choice 4</button>
         </div>
+        <!-- Home Button -->
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">    
             <a href="index.html" class="btn start-game btn-primary btn-lg px-4 gap-3">Home</a>
         </div>    
     </div>
-<script type="text/javascript" src="assets/js/script.js"></script>
+<script type="text/javascript" src="assets/js/gamescript.js"></script>
 </body>
 </html>
